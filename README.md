@@ -10,6 +10,11 @@
 <a href="#italiano">Italiano</a> · <a href="#english">English</a> · <a href="#русский">Русский</a>
 </p>
 
+<p align="center">
+<img src="assets/screenshots/main.png" width="760" alt="Pupovina: tethering attivo / tethering active">
+<img src="assets/screenshots/phone.jpg" width="172" alt="Android: VPN gnirehtet">
+</p>
+
 ---
 
 ## Italiano
