@@ -1,6 +1,8 @@
 <p align="center"><img src="assets/icon.png" width="96" alt=""></p>
 
-<h1 align="center">Gnirehtet GUI</h1>
+<h1 align="center">Pupovina</h1>
+
+<p align="center"><b>Reverse tethering for Android over USB (GUI for gnirehtet)</b></p>
 
 <p align="center"><i>di / by / автор: Dmitrij Musella</i></p>
 
@@ -11,6 +13,9 @@
 ---
 
 ## Italiano
+
+*Pupovina* (пуповина) in russo significa «cordone ombelicale»: il cavo USB che porta internet
+dal computer al telefono. Fino alla versione 1.3.0 si chiamava *Gnirehtet GUI*.
 
 Interfaccia grafica per [gnirehtet](https://github.com/Genymobile/gnirehtet):
 il telefono Android usa la **connessione internet del computer tramite cavo USB**
@@ -27,16 +32,19 @@ il telefono Android usa la **connessione internet del computer tramite cavo USB*
 - Interfaccia in **italiano, inglese e russo**.
 - Console con il registro completo e **manuale utente** integrato (F1).
 
-**Scaricare**: dalla pagina [Releases](../../releases) prendi `GnirehtetGUI.exe` (Windows)
-oppure `GnirehtetGUI-x86_64.AppImage` (Linux). Non serve Python.
+**Scaricare**: dalla pagina [Releases](../../releases) prendi `Pupovina.exe` (Windows)
+oppure `Pupovina-x86_64.AppImage` (Linux). Non serve Python.
 
-**Dal codice**: `pip install -r requirements.txt` e poi `python gnirehtet_gui.py`.
+**Dal codice**: `pip install -r requirements.txt` e poi `python pupovina.py`.
 
 Manuale completo: [docs/MANUALE.md](docs/MANUALE.md).
 
 ---
 
 ## English
+
+*Pupovina* (пуповина) is Russian for «umbilical cord»: the USB cable that carries internet
+from the computer to the phone. Up to version 1.3.0 it was called *Gnirehtet GUI*.
 
 Graphical interface for [gnirehtet](https://github.com/Genymobile/gnirehtet): an Android
 phone uses the **computer's internet connection over the USB cable** (reverse tethering),
@@ -53,16 +61,19 @@ no root required. Works on Windows and Linux.
 - Interface in **Italian, English and Russian**.
 - Console with the full log and a built-in **user manual** (F1).
 
-**Download**: from the [Releases](../../releases) page get `GnirehtetGUI.exe` (Windows)
-or `GnirehtetGUI-x86_64.AppImage` (Linux). No Python needed.
+**Download**: from the [Releases](../../releases) page get `Pupovina.exe` (Windows)
+or `Pupovina-x86_64.AppImage` (Linux). No Python needed.
 
-**From source**: `pip install -r requirements.txt`, then `python gnirehtet_gui.py`.
+**From source**: `pip install -r requirements.txt`, then `python pupovina.py`.
 
 Full manual: [docs/MANUAL.md](docs/MANUAL.md).
 
 ---
 
 ## Русский
+
+*Пуповина* — это USB-кабель, по которому интернет идёт от компьютера к телефону.
+До версии 1.3.0 программа называлась *Gnirehtet GUI*.
 
 Графический интерфейс для [gnirehtet](https://github.com/Genymobile/gnirehtet): телефон
 Android пользуется **интернетом компьютера через USB-кабель** (обратный тетеринг),
@@ -79,10 +90,10 @@ Android пользуется **интернетом компьютера чер�
 - Интерфейс на **итальянском, английском и русском**.
 - Консоль с полным журналом и встроенное **руководство пользователя** (F1).
 
-**Скачать**: на странице [Releases](../../releases) возьмите `GnirehtetGUI.exe` (Windows)
-или `GnirehtetGUI-x86_64.AppImage` (Linux). Python не нужен.
+**Скачать**: на странице [Releases](../../releases) возьмите `Pupovina.exe` (Windows)
+или `Pupovina-x86_64.AppImage` (Linux). Python не нужен.
 
-**Из исходников**: `pip install -r requirements.txt`, затем `python gnirehtet_gui.py`.
+**Из исходников**: `pip install -r requirements.txt`, затем `python pupovina.py`.
 
 Полное руководство: [docs/MANUAL.ru.md](docs/MANUAL.ru.md).
 
@@ -94,8 +105,8 @@ The executables are built by GitHub Actions ([release.yml](.github/workflows/rel
 whenever a version tag is pushed:
 
 ```
-git tag v1.3.0
-git push origin v1.3.0
+git tag v1.4.0
+git push origin v1.4.0
 ```
 
 ## Credits
