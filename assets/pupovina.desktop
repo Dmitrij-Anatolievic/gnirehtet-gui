@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Pupovina
+Comment=Reverse tethering per Android via USB
+Comment[en]=Android reverse tethering over USB
+Comment[ru]=Обратный тетеринг Android через USB
+Exec=Pupovina
+Icon=pupovina
+Terminal=false
+Categories=Network;Utility;
