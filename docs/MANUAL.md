@@ -1,10 +1,10 @@
-# User manual — Gnirehtet GUI 1.3.0
+# User manual — Pupovina 1.4.0
 
 *by Dmitrij Musella*
 
 ## What it does
 
-Gnirehtet GUI lets an Android phone **use the computer's internet connection over the USB
+Pupovina lets an Android phone **use the computer's internet connection over the USB
 cable**. It is the opposite of a normal hotspot, which is why it is called *reverse
 tethering*. No root is needed, neither on the phone nor on the computer.
 
@@ -18,11 +18,11 @@ carries TCP and UDP traffic over IPv4 (IPv6 is not supported).
 ## Installation
 
 **Ready-made build (recommended)**: from the project's *Releases* page on GitHub download
-`GnirehtetGUI.exe` for Windows or `GnirehtetGUI-x86_64.AppImage` for Linux. Python is not
+`Pupovina.exe` for Windows or `Pupovina-x86_64.AppImage` for Linux. Python is not
 required. On Linux make the AppImage executable (`chmod +x`) and run it.
 
 **From source**: install Python 3.9 or later and PyQt6 (`pip install PyQt6`), then run
-`python gnirehtet_gui.py`.
+`python pupovina.py`.
 
 The phone needs Android 5.0 or later, **USB debugging** enabled and a USB cable that
 carries data. To enable USB debugging: *Settings → About phone*, tap **Build number**
@@ -143,8 +143,8 @@ Port and DNS changes apply from the next tethering start.
 ## Command line
 
 ```
-python gnirehtet_gui.py            normal start
-python gnirehtet_gui.py --hidden   start directly in the notification area
+python pupovina.py            normal start
+python pupovina.py --hidden   start directly in the notification area
 ```
 
 The `--hidden` option also works with the executable and the AppImage.
@@ -190,7 +190,7 @@ Settings stay on your computer.
 
 ## Credits
 
-Gnirehtet GUI — © 2026 Dmitrij Musella.
+Pupovina — © 2026 Dmitrij Musella.
 
 Based on [gnirehtet](https://github.com/Genymobile/gnirehtet) by Genymobile, released
 under the Apache 2.0 license. adb is part of Google's Android SDK Platform Tools.

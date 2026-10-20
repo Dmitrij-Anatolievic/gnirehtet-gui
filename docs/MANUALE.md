@@ -1,10 +1,10 @@
-# Manuale utente — Gnirehtet GUI 1.3.0
+# Manuale utente — Pupovina 1.4.0
 
 *di Dmitrij Musella*
 
 ## A cosa serve
 
-Gnirehtet GUI permette a un telefono Android di **usare la connessione internet del
+Pupovina permette a un telefono Android di **usare la connessione internet del
 computer attraverso il cavo USB**. È il contrario del normale hotspot, per questo si
 chiama *reverse tethering*. Non serve il root né sul telefono né sul computer.
 
@@ -18,11 +18,11 @@ il traffico TCP e UDP su IPv4 (IPv6 non è supportato).
 ## Installazione
 
 **Versione pronta (consigliata)**: dalla pagina *Releases* del progetto su GitHub scarica
-`GnirehtetGUI.exe` per Windows oppure `GnirehtetGUI-x86_64.AppImage` per Linux. Non serve
+`Pupovina.exe` per Windows oppure `Pupovina-x86_64.AppImage` per Linux. Non serve
 installare Python. Su Linux rendi eseguibile l'AppImage (`chmod +x`) e avviala.
 
 **Dal codice sorgente**: installa Python 3.9 o superiore e PyQt6 (`pip install PyQt6`),
-poi avvia `python gnirehtet_gui.py`.
+poi avvia `python pupovina.py`.
 
 Sul telefono servono Android 5.0 o superiore, il **Debug USB** attivo e un cavo USB che
 trasporti i dati. Per attivare il Debug USB: *Impostazioni → Informazioni sul telefono*,
@@ -148,8 +148,8 @@ Le modifiche a porta e DNS valgono dal tethering successivo.
 ## Avvio da riga di comando
 
 ```
-python gnirehtet_gui.py              avvio normale
-python gnirehtet_gui.py --nascosto   avvio direttamente nell'area di notifica
+python pupovina.py              avvio normale
+python pupovina.py --nascosto   avvio direttamente nell'area di notifica
 ```
 
 L'opzione `--nascosto` (oppure `--hidden`) funziona anche con l'eseguibile e l'AppImage.
@@ -195,7 +195,7 @@ Le impostazioni restano sul tuo computer.
 
 ## Crediti
 
-Gnirehtet GUI — © 2026 Dmitrij Musella.
+Pupovina — © 2026 Dmitrij Musella.
 
 Basato su [gnirehtet](https://github.com/Genymobile/gnirehtet) di Genymobile,
 distribuito con licenza Apache 2.0. adb fa parte degli Android SDK Platform Tools di Google.

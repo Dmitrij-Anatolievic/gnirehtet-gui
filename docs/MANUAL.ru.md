@@ -1,10 +1,10 @@
-# Руководство пользователя — Gnirehtet GUI 1.3.0
+# Руководство пользователя — Pupovina 1.4.0
 
 *автор: Dmitrij Musella*
 
 ## Назначение
 
-Gnirehtet GUI позволяет телефону Android **пользоваться интернетом компьютера через USB-кабель**.
+Pupovina позволяет телефону Android **пользоваться интернетом компьютера через USB-кабель**.
 Это противоположность обычной точке доступа, поэтому такая функция называется
 *обратным тетерингом* (reverse tethering). Root-права не нужны ни на телефоне, ни на
 компьютере.
@@ -19,11 +19,11 @@ Gnirehtet передаёт трафик TCP и UDP по IPv4 (IPv6 не подд
 ## Установка
 
 **Готовая сборка (рекомендуется)**: на странице *Releases* проекта на GitHub скачайте
-`GnirehtetGUI.exe` для Windows или `GnirehtetGUI-x86_64.AppImage` для Linux. Python
+`Pupovina.exe` для Windows или `Pupovina-x86_64.AppImage` для Linux. Python
 устанавливать не нужно. В Linux сделайте AppImage исполняемым (`chmod +x`) и запустите.
 
 **Из исходного кода**: установите Python 3.9 или новее и PyQt6 (`pip install PyQt6`),
-затем выполните `python gnirehtet_gui.py`.
+затем выполните `python pupovina.py`.
 
 На телефоне нужны Android 5.0 или новее, включённая **отладка по USB** и кабель, который
 передаёт данные. Как включить отладку: *Настройки → О телефоне*, семь раз нажмите
@@ -149,8 +149,8 @@ Gnirehtet передаёт трафик TCP и UDP по IPv4 (IPv6 не подд
 ## Командная строка
 
 ```
-python gnirehtet_gui.py            обычный запуск
-python gnirehtet_gui.py --hidden   запуск сразу в области уведомлений
+python pupovina.py            обычный запуск
+python pupovina.py --hidden   запуск сразу в области уведомлений
 ```
 
 Параметр `--hidden` работает и с исполняемым файлом, и с AppImage.
@@ -198,7 +198,7 @@ adb с сайта Google. Настройки хранятся на вашем к
 
 ## Благодарности
 
-Gnirehtet GUI — © 2026 Dmitrij Musella.
+Pupovina — © 2026 Dmitrij Musella.
 
 Основано на [gnirehtet](https://github.com/Genymobile/gnirehtet) от Genymobile,
 распространяется по лицензии Apache 2.0. adb входит в состав Android SDK Platform Tools
