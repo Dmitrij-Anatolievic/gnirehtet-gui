@@ -1,0 +1,81 @@
+# Costruisce GnirehtetGUI.exe (Windows) e GnirehtetGUI-x86_64.AppImage (Linux).
+# - Ad ogni tag "v*" (es. v1.2.0) crea una Release su GitHub con i due file.
+# - Si può anche avviare a mano da Actions -> "Build e release" -> Run workflow
+#   (in quel caso i file si scaricano dagli "Artifacts" dell'esecuzione).
+
+name: Build e release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dipendenze
+        run: pip install -r requirements.txt pyinstaller
+      - name: Build .exe
+        run: >
+          pyinstaller --noconfirm --clean --onefile --windowed
+          --name GnirehtetGUI --icon assets/icon.ico gnirehtet_gui.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GnirehtetGUI-windows
+          path: dist/GnirehtetGUI.exe
+
+  linux:
+    # Ubuntu 22.04: glibc più vecchia = l'AppImage gira su più distribuzioni
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Librerie di sistema per Qt (vengono incluse nell'AppImage)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 \
+            libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 \
+            libxcb-shape0 libxcb-xinerama0 libxcb-xkb1 libegl1 file
+      - name: Dipendenze
+        run: pip install -r requirements.txt pyinstaller
+      - name: Build
+        run: pyinstaller --noconfirm --clean --onedir --windowed --name GnirehtetGUI gnirehtet_gui.py
+      - name: Crea AppImage
+        run: |
+          mkdir -p AppDir/usr/bin
+          cp -r dist/GnirehtetGUI/. AppDir/usr/bin/
+          cp assets/gnirehtet-gui.desktop AppDir/
+          cp assets/icon.png AppDir/gnirehtet-gui.png
+          printf '#!/bin/sh\nHERE="$(dirname "$(readlink -f "$0")")"\nexec "$HERE/usr/bin/GnirehtetGUI" "$@"\n' > AppDir/AppRun
+          chmod +x AppDir/AppRun
+          wget -q https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+          chmod +x appimagetool-x86_64.AppImage
+          ARCH=x86_64 APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool-x86_64.AppImage AppDir GnirehtetGUI-x86_64.AppImage
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GnirehtetGUI-linux
+          path: GnirehtetGUI-x86_64.AppImage
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [windows, linux]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: out/*
+          generate_release_notes: true
